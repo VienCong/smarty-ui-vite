@@ -1,16 +1,76 @@
-import { defineComponent, h, openBlock, createElementBlock, createVNode, createTextVNode } from "vue";
-const MyButton = defineComponent({
+import { defineComponent, createVNode, openBlock, createElementBlock, createTextVNode } from "vue";
+const __uno = "";
+const props = {
+  size: {
+    type: String,
+    default: "medium"
+  },
+  color: {
+    type: String,
+    default: "blue"
+  },
+  round: {
+    type: Boolean,
+    default: false
+  },
+  plain: {
+    type: Boolean,
+    default: false
+  },
+  icon: {
+    type: String,
+    default: ""
+  }
+};
+const SButton = /* @__PURE__ */ defineComponent({
   name: "SButton",
-  render() {
-    return h("button", null, "MyButton");
+  props,
+  setup(props2, {
+    slots
+  }) {
+    const size = {
+      small: {
+        x: "2",
+        y: "1",
+        text: "sm"
+      },
+      medium: {
+        x: "3",
+        y: "1.5",
+        text: "base"
+      },
+      large: {
+        x: "4",
+        y: "2",
+        text: "lg"
+      }
+    };
+    return () => createVNode("button", {
+      "class": `
+          py-${size[props2.size].y}
+          py-2 
+          px-4 
+          font-semibold 
+          rounded-lg 
+          shadow-md 
+          text-white 
+          bg-${props2.color}-500 
+          hover:bg-${props2.color}-700 
+          border-none 
+          cursor-pointer 
+          m-1
+          `
+    }, [props2.icon !== "" ? createVNode("i", {
+      "class": `i-ic-baseline-${props2.icon} p-3`
+    }, null) : "", slots.default ? slots.default() : ""]);
   }
 });
 const _sfc_main = {
   name: "SFCButton"
 };
-const _export_sfc = (sfc, props) => {
+const _export_sfc = (sfc, props2) => {
   const target = sfc.__vccOpts || sfc;
-  for (const [key, val] of props) {
+  for (const [key, val] of props2) {
     target[key] = val;
   }
   return target;
@@ -27,14 +87,14 @@ const JSXButton = /* @__PURE__ */ defineComponent({
 });
 const entry = {
   install(app) {
-    app.component(MyButton.name, MyButton);
+    app.component(SButton.name, SButton);
     app.component(SFCButton.name, SFCButton);
     app.component(JSXButton.name, JSXButton);
   }
 };
 export {
   JSXButton,
-  MyButton,
+  SButton,
   SFCButton,
   entry as default
 };
