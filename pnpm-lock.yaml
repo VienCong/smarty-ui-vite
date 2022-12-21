@@ -17,6 +17,7 @@ specifiers:
   happy-dom: ^8.1.1
   husky: ^8.0.2
   prettier: ^2.8.1
+  terser: ^5.16.1
   typescript: ^4.9.4
   unocss: ^0.47.6
   vite: ^4.0.2
@@ -45,12 +46,13 @@ devDependencies:
   happy-dom: 8.1.1
   husky: 8.0.2
   prettier: 2.8.1
+  terser: 5.16.1
   typescript: 4.9.4
   unocss: 0.47.6_vite@4.0.2
-  vite: 4.0.2
-  vitepress: 1.0.0-alpha.33
-  vitepress-theme-demoblock: 2.0.1
-  vitest: 0.26.2_happy-dom@8.1.1
+  vite: 4.0.2_terser@5.16.1
+  vitepress: 1.0.0-alpha.33_terser@5.16.1
+  vitepress-theme-demoblock: 2.0.1_terser@5.16.1
+  vitest: 0.26.2_vncu6fhkgmpt3yw5ybb7kott2q
 
 packages:
 
@@ -958,6 +960,13 @@ packages:
     engines: {node: '>=6.0.0'}
     dev: true
 
+  /@jridgewell/source-map/0.3.2:
+    resolution: {integrity: sha512-m7O9o2uR8k2ObDysZYzdfhb08VuEml5oWGiosa1VdaPZ/A6QyPkAJuwN0Q1lhULOf6B7MtQmHENS743hWtCrgw==}
+    dependencies:
+      '@jridgewell/gen-mapping': 0.3.2
+      '@jridgewell/trace-mapping': 0.3.17
+    dev: true
+
   /@jridgewell/sourcemap-codec/1.4.14:
     resolution: {integrity: sha512-XPSJHWmi394fuUuzDnGz1wiKqWfo1yXecHQMRf2l6hztTO+nPru658AyDngaBe7isIxEkRsPR3FZh+s7iVa4Uw==}
 
@@ -1386,7 +1395,7 @@ packages:
       '@unocss/scope': 0.47.6
       '@unocss/transformer-directives': 0.47.6
       magic-string: 0.27.0
-      vite: 4.0.2
+      vite: 4.0.2_terser@5.16.1
     transitivePeerDependencies:
       - rollup
     dev: true
@@ -1401,7 +1410,7 @@ packages:
       '@babel/core': 7.20.5
       '@babel/plugin-transform-typescript': 7.20.2_@babel+core@7.20.5
       '@vue/babel-plugin-jsx': 1.1.1_@babel+core@7.20.5
-      vite: 4.0.2
+      vite: 4.0.2_terser@5.16.1
       vue: 3.2.45
     transitivePeerDependencies:
       - supports-color
@@ -1414,7 +1423,7 @@ packages:
       vite: ^4.0.0
       vue: ^3.2.25
     dependencies:
-      vite: 4.0.2
+      vite: 4.0.2_terser@5.16.1
       vue: 3.2.45
     dev: true
 
@@ -1955,6 +1964,10 @@ packages:
 
   /colorette/2.0.19:
     resolution: {integrity: sha512-3tlv/dIP7FWvj3BsbHrGLJ6l/oKh1O3TcgBqMn+yyCagOxc23fyzDS6HypQbgxWbkpDnf52p1LuR4eWDQ/K9WQ==}
+    dev: true
+
+  /commander/2.20.3:
+    resolution: {integrity: sha512-GpVkmM8vF2vQUkj2LvZmD35JxeJOLCwJ9cUkugyk2nuhbv3+mJvpLYYt+0+USMxE+oj+ey/lJEnhZw75x/OMcQ==}
     dev: true
 
   /compare-func/2.0.0:
@@ -3634,6 +3647,17 @@ packages:
     resolution: {integrity: sha512-ovssysQTa+luh7A5Weu3Rta6FJlFBBbInjOh722LIt6klpU2/HtdUbszju/G4devcvk8PGt7FCLv5wftu3THUA==}
     dev: true
 
+  /terser/5.16.1:
+    resolution: {integrity: sha512-xvQfyfA1ayT0qdK47zskQgRZeWLoOQ8JQ6mIgRGVNwZKdQMU+5FkCBjmv4QjcrTzyZquRw2FVtlJSRUmMKQslw==}
+    engines: {node: '>=10'}
+    hasBin: true
+    dependencies:
+      '@jridgewell/source-map': 0.3.2
+      acorn: 8.8.1
+      commander: 2.20.3
+      source-map-support: 0.5.21
+    dev: true
+
   /text-extensions/1.9.0:
     resolution: {integrity: sha512-wiBrwC1EhBelW12Zy26JeOUkQ5mRu+5o8rpsJk5+2t+Y5vE7e842qtZDQ2g1NpX/29HdyFeJ4nSIhI47ENSxlQ==}
     engines: {node: '>=0.10'}
@@ -3868,7 +3892,7 @@ packages:
       spdx-expression-parse: 3.0.1
     dev: false
 
-  /vite-node/0.26.2_@types+node@18.11.17:
+  /vite-node/0.26.2_u4qtfkm32ppnvboczhv56utkqi:
     resolution: {integrity: sha512-4M/zlatItZAyvrQG+82zQBhgDjRZRhVJYFW4T9wcAKh7eMmSiPOVSeI5zsV9UzHXgCcIDKX0o0r3s4OxExTHqg==}
     engines: {node: '>=v14.16.0'}
     hasBin: true
@@ -3878,7 +3902,7 @@ packages:
       pathe: 0.2.0
       source-map: 0.6.1
       source-map-support: 0.5.21
-      vite: 4.0.2_@types+node@18.11.17
+      vite: 4.0.2_u4qtfkm32ppnvboczhv56utkqi
     transitivePeerDependencies:
       - '@types/node'
       - less
@@ -3889,7 +3913,7 @@ packages:
       - terser
     dev: true
 
-  /vite/4.0.2:
+  /vite/4.0.2_terser@5.16.1:
     resolution: {integrity: sha512-QJaY3R+tFlTagH0exVqbgkkw45B+/bXVBzF2ZD1KB5Z8RiAoiKo60vSUf6/r4c2Vh9jfGBKM4oBI9b4/1ZJYng==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
@@ -3918,11 +3942,12 @@ packages:
       postcss: 8.4.20
       resolve: 1.22.1
       rollup: 3.7.5
+      terser: 5.16.1
     optionalDependencies:
       fsevents: 2.3.2
     dev: true
 
-  /vite/4.0.2_@types+node@18.11.17:
+  /vite/4.0.2_u4qtfkm32ppnvboczhv56utkqi:
     resolution: {integrity: sha512-QJaY3R+tFlTagH0exVqbgkkw45B+/bXVBzF2ZD1KB5Z8RiAoiKo60vSUf6/r4c2Vh9jfGBKM4oBI9b4/1ZJYng==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
@@ -3952,11 +3977,12 @@ packages:
       postcss: 8.4.20
       resolve: 1.22.1
       rollup: 3.7.5
+      terser: 5.16.1
     optionalDependencies:
       fsevents: 2.3.2
     dev: true
 
-  /vitepress-theme-demoblock/2.0.1:
+  /vitepress-theme-demoblock/2.0.1_terser@5.16.1:
     resolution: {integrity: sha512-a0WQmz6D7btUs7yiQGDdKBZ9A8UIY6UZxqnNzpx/2zjWPIS4aacA5g79bm7MS9q6bQ9ySzHY6W8qFrOf1urBgQ==}
     engines: {node: '>=16.0.0'}
     hasBin: true
@@ -3973,7 +3999,7 @@ packages:
       picocolors: 1.0.0
       prettier: 2.8.1
       shiki: 0.11.1
-      vitepress: 1.0.0-alpha.33
+      vitepress: 1.0.0-alpha.33_terser@5.16.1
       vue: 3.2.44
       yaml: 2.1.3
     transitivePeerDependencies:
@@ -3990,7 +4016,7 @@ packages:
       - terser
     dev: true
 
-  /vitepress/1.0.0-alpha.33:
+  /vitepress/1.0.0-alpha.33_terser@5.16.1:
     resolution: {integrity: sha512-EhMDqWLllYr5mXqAz4GCQ1o/bu5umQ6C2d8voiSaTHMkYCxsGc31ETykflM6NOhGx6yccwXygrYIIeN1l6BUEA==}
     hasBin: true
     dependencies:
@@ -4001,7 +4027,7 @@ packages:
       '@vueuse/core': 9.8.2_vue@3.2.45
       body-scroll-lock: 4.0.0-beta.0
       shiki: 0.12.1
-      vite: 4.0.2
+      vite: 4.0.2_terser@5.16.1
       vue: 3.2.45
     transitivePeerDependencies:
       - '@algolia/client-search'
@@ -4017,7 +4043,7 @@ packages:
       - terser
     dev: true
 
-  /vitest/0.26.2_happy-dom@8.1.1:
+  /vitest/0.26.2_vncu6fhkgmpt3yw5ybb7kott2q:
     resolution: {integrity: sha512-Jvqxh6SDy9SsuslkDjts0iDewDIdq4rveEt69YgDuAb1tVDGV0lDepVaeAFraoySWqneJmOt4TngFFNhlw7GfA==}
     engines: {node: '>=v14.16.0'}
     hasBin: true
@@ -4053,8 +4079,8 @@ packages:
       tinybench: 2.3.1
       tinypool: 0.3.0
       tinyspy: 1.0.2
-      vite: 4.0.2_@types+node@18.11.17
-      vite-node: 0.26.2_@types+node@18.11.17
+      vite: 4.0.2_u4qtfkm32ppnvboczhv56utkqi
+      vite-node: 0.26.2_u4qtfkm32ppnvboczhv56utkqi
     transitivePeerDependencies:
       - less
       - sass
