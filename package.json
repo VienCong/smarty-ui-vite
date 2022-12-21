@@ -9,17 +9,31 @@
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
     "docs:serve": "vitepress serve docs",
-    "test": "vitest"
+    "test": "vitest",
+    "lint": "eslint --fix --ext .ts,.vue src",
+    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.vue\"",
+    "prepare": "husky install",
+    "test:run": "vitest run"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@iconify-json/ic": "^1.1.10",
+    "@typescript-eslint/eslint-plugin": "^5.47.0",
+    "@typescript-eslint/parser": "^5.47.0",
     "@vitejs/plugin-vue": "^4.0.0",
     "@vitejs/plugin-vue-jsx": "^3.0.0",
+    "@vue/eslint-config-prettier": "^7.0.0",
     "@vue/test-utils": "^2.2.6",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^8.30.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-vue": "^9.8.0",
     "happy-dom": "^8.1.1",
+    "husky": "^8.0.2",
+    "prettier": "^2.8.1",
+    "typescript": "^4.9.4",
     "unocss": "^0.47.6",
     "vite": "^4.0.2",
     "vitepress": "1.0.0-alpha.33",
@@ -27,6 +41,8 @@
     "vitest": "^0.26.2"
   },
   "dependencies": {
+    "@commitlint/cli": "^17.3.0",
+    "@commitlint/config-conventional": "^17.3.0",
     "vue": "^3.2.45"
   }
 }
